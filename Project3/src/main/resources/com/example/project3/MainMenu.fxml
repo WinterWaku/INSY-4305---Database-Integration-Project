@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.project3.MainMenuController">
+    <padding>
+        <Insets bottom="40" left="60" right="60" top="40"/>
+    </padding>
+    <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Project 3 Data Entry"/>
+    <Button onAction="#onCustomerButtonClick" prefWidth="200" text="Customer"/>
+    <Button onAction="#onEmployeeButtonClick" prefWidth="200" text="Employee"/>
+    <Button onAction="#onExitButtonClick"     prefWidth="200" text="Exit"/>
+</VBox>

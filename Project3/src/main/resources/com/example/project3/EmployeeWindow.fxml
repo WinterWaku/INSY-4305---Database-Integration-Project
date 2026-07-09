@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="12.0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.project3.EmployeeController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Employee Data Entry" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+
+    <!-- Input Form -->
+    <GridPane hgap="10" vgap="8">
+        <Label text="First Name:"      GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtFirstName"      GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="260" promptText="First Name"/>
+
+        <Label text="Last Name:"       GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtLastName"       GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Last Name"/>
+
+        <Label text="Email:"           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtEmail"          GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Email"/>
+
+        <Label text="Phone:"           GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPhone"          GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="###-###-####"/>
+
+        <Label text="Job Class:"       GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtJobClass"       GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="Job Class"/>
+
+        <Label text="Job Description:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtJobDescription" GridPane.rowIndex="5" GridPane.columnIndex="1" promptText="Job Description"/>
+
+        <Label text="Salary:"          GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtSalary"         GridPane.rowIndex="6" GridPane.columnIndex="1" promptText="0.00"/>
+    </GridPane>
+
+    <!-- Action Buttons -->
+    <HBox spacing="8" alignment="CENTER">
+        <Button text="Add"       onAction="#onAddButtonClick"      prefWidth="88"/>
+        <Button fx:id="btnSave"  text="Save"  onAction="#onSaveButtonClick"  prefWidth="88"/>
+        <Button fx:id="btnReset" text="Reset" onAction="#onResetButtonClick" prefWidth="88"/>
+        <Button text="Main Menu" onAction="#onMainMenuButtonClick" prefWidth="88"/>
+        <Button text="Exit"      onAction="#onExitButtonClick"     prefWidth="88"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- Search Bar -->
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <TextField fx:id="txtSearch" prefWidth="290" promptText="Search by name or ID..."/>
+        <Button text="Search"          onAction="#onSearchButtonClick" prefWidth="85"/>
+        <Button text="View Employees"  onAction="#onViewButtonClick"   prefWidth="110"/>
+    </HBox>
+
+    <!-- Employee TableView -->
+    <TableView fx:id="tableEmployees" prefHeight="220" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="colId"       text="ID"          prefWidth="45"/>
+            <TableColumn fx:id="colFirst"    text="First Name"  prefWidth="90"/>
+            <TableColumn fx:id="colLast"     text="Last Name"   prefWidth="90"/>
+            <TableColumn fx:id="colEmail"    text="Email"       prefWidth="145"/>
+            <TableColumn fx:id="colPhone"    text="Phone"       prefWidth="100"/>
+            <TableColumn fx:id="colJobClass" text="Job Class"   prefWidth="75"/>
+            <TableColumn fx:id="colJobDesc"  text="Job Desc"    prefWidth="110"/>
+            <TableColumn fx:id="colSalary"   text="Salary"      prefWidth="75"/>
+        </columns>
+        <placeholder><Label text="No employees found."/></placeholder>
+    </TableView>
+</VBox>
